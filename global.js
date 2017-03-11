@@ -1,4 +1,4 @@
 module.exports = {
-  providerURL: "",
-  providerToken: ""
+  providerURL: '',
+  providerCookie: '',
 };
