@@ -28,10 +28,15 @@ class Home extends React.Component {
     if(this.validate()){
       axios.post(this.API_URL, this.state)
       .then((res)=>{
-        console.log(res)
+          if(res && res.data && res.data.status === 'success'){
+            alert('Your message have been sent');
+          }
+          else{
+            alert("Your message haven't been sent");
+          }
         })
       .catch((er)=>{
-        console.log(er)
+        console.error(er);
         })
     }
   }
