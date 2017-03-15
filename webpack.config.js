@@ -1,21 +1,21 @@
 var path = require('path');
 
 module.exports = {
-  entry: './index.js',
+  entry: './index.jsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public/javascripts')
   },
   module:{
-    loaders:[
+    rules:[
       {
-        test: /\.js[x]?$/,
+        test: /\.jsx$/,
         exclude: /(node_modules)/,
         use:[
           {
             loader: "babel-loader",
-            query: {
-              presets: ["env", "react"]
+            options: {
+              presets: ['env', 'react']
             } 
           }
         ]
