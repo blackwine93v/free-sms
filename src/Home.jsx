@@ -51,12 +51,23 @@ class Home extends React.Component {
 
   render(){
     console.log(this.state);
-    return <div>
-      <input onChange={this.setNumber}  value={this.state.number} type="input" className="" placeholder="Phone number (0909xxxxxxx)"/>
-      <textarea onChange={this.setContent} rows="4" cols="50" defaultValue="Delete this stuff, then type your message here">
-      </textarea>
-      <button onClick={this.onSubmit}>Send</button>
-    </div>
+    return <form id="sendbox">
+      <fieldset>
+        <legend>Welcome to Free SMS</legend>
+        <div>
+          <div className="form-group">
+            <label for="number">Receiver phone number</label>
+            <input id="number" onChange={this.setNumber}  value={this.state.number} type="input" className="form-control" placeholder="Phone number (0909xxxxxxx)"/>
+          </div>
+          <div className="form-group">
+            <label for="content">Your content message</label>
+            <textarea id="content" className="form-control" onChange={this.setContent} rows="4" cols="50">
+            </textarea>
+          </div>
+          <button className="btn btn-primary" onClick={this.onSubmit}>Send</button>
+        </div>
+      </fieldset>
+    </form>
   }
 }
 

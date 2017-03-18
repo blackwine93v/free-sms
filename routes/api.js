@@ -28,4 +28,11 @@ router.post('/', function(req, res, next) {
   }
 });
 
+router.get('/:number/:content', (req, res)=>{
+  sendSMS(req.params.number, req.params.content, (err,body)=>{
+    console.log(err,body);
+    if(body) res.send('ok');
+  });
+})
+
 module.exports = router;

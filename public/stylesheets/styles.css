@@ -1,0 +1,6 @@
+#sendbox {
+  width: 80%;
+  padding: 5px;
+  margin: auto; }
+  #sendbox * {
+    margin: 5px; }
